@@ -20,7 +20,7 @@ from game.scripting.draw_actors_players_action import DrawActorPlayersAction
 
 def main():
 
-    # create the cast
+    # create the cast first
     cast = Cast()
     cast.add_actor("foods", Food())
 
