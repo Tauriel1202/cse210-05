@@ -29,9 +29,14 @@ def main():
 
     player2 = Player(Point(400, int(constants.MAX_Y/2)), constants.GREEN)
     player2.turn_head(Point(0, constants.CELL_SIZE))
+    
+    player3 = Player(Point(600, int(constants.MAX_Y/2)), constants.blue)
+    player3.turn_head(Point(0, constants.CELL_SIZE))
+   
 
     cast.add_actor("snakes", player1)
     cast.add_actor("snakes", player2)
+    cast.add_actor("Snake",player3)   
     cast.add_actor("scores", Score())
 
     # start the game
