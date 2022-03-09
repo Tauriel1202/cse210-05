@@ -32,9 +32,4 @@ root                    (project root folder)
 * Raylib Python CFFI 3.7
 
 
-## Authors
----
-Team Members: Adja -> bernitos_diparma@yahoo.it,
- Benjamin -> benjamin.huerta.awi@gmail.com, 
-Courtney -> lothlorienexplorer20@gmail.com,
- Nelson -> alexanortega@gmail.com
+
