@@ -31,6 +31,10 @@ root                    (project root folder)
 * Python 3.8.0
 * Raylib Python CFFI 3.7
 
+
 ## Authors
 ---
-* TODO: Add your name and email here
+Team Members: Adja -> bernitos_diparma@yahoo.it,
+ Benjamin -> benjamin.huerta.awi@gmail.com, 
+Courtney -> lothlorienexplorer20@gmail.com,
+ Nelson -> alexanortega@gmail.com
