@@ -4,8 +4,8 @@ Cycle is a game where the players try to cut each other off using cycles that le
 
 
 Team Members:
-Adja -> bernitos_diparma@yahoo.it,
-Benjamin -> benjamin.huerta.awi@gmail.com,
-Courtney -> lothlorienexplorer20@gmail.com,
-Nelson -> alexanortega@gmail.com
+1. Adja -> bernitos_diparma@yahoo.it
+2. Benjamin -> benjamin.huerta.awi@gmail.com
+3. Courtney -> lothlorienexplorer20@gmail.com
+4. Nelson -> alexanortega@gmail.com
 
