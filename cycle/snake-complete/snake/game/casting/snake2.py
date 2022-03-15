@@ -6,16 +6,19 @@ from game.shared.point import Point
 class Snake2(Actor):
     """
     A long limbless reptile.
-    
+
     The responsibility of Snake is to move itself.
 
     Attributes:
         _points (int): The number of points the food is worth.
     """
+
     def __init__(self):
         super().__init__()
         self._segments = []
         self._prepare_body()
+        self._current_direction = None
+        self._points = 0
 
     def get_segments(self):
         return self._segments
@@ -40,7 +43,7 @@ class Snake2(Actor):
             velocity = tail.get_velocity()
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
-            
+
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
@@ -50,20 +53,28 @@ class Snake2(Actor):
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
-    
+        if self._current_direction != velocity:
+            self.grow_tail(1)
+            self._current_direction = velocity
+            self._points += 1
+
     def _prepare_body(self):
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)
 
         for i in range(constants.SNAKE_LENGTH):
-            position = Point(x - i * constants.CELL_SIZE, y+constants.CELL_SIZE*2)
+            position = Point(x - i * constants.CELL_SIZE,
+                             y+constants.CELL_SIZE*2)
             velocity = Point(1 * constants.CELL_SIZE, 0)
             text = "8" if i == 0 else "#"
             color = constants.YELLOW if i == 0 else constants.BLUE
-            
+
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text(text)
             segment.set_color(color)
             self._segments.append(segment)
+
+    def get_points(self):
+        return self._points

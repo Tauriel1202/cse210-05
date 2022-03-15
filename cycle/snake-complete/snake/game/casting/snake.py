@@ -17,6 +17,8 @@ class Snake(Actor):
         super().__init__()
         self._segments = []
         self._prepare_body()
+        self._current_direction = None
+        self._points = 0
 
     def get_segments(self):
         return self._segments
@@ -53,6 +55,10 @@ class Snake(Actor):
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
+        if self._current_direction != velocity:
+            self.grow_tail(1)
+            self._points += 1
+            self._current_direction = velocity
 
     def _prepare_body(self):
         x = int(constants.MAX_X / 2)
@@ -70,3 +76,6 @@ class Snake(Actor):
             segment.set_text(text)
             segment.set_color(color)
             self._segments.append(segment)
+
+    def get_points(self):
+        return self._points
