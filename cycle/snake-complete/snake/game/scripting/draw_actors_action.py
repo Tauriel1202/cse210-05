@@ -34,9 +34,6 @@ class DrawActorsAction(Action):
         segments2 = snake2.get_segments()
         messages = cast.get_actors("messages")
 
-        score.set_points(snake.get_points())
-        score2.set_points(snake2.get_points())
-
         self._video_service.clear_buffer()
         self._video_service.draw_actors(segments)
         self._video_service.draw_actors(segments2)
@@ -44,3 +41,9 @@ class DrawActorsAction(Action):
         self._video_service.draw_actor(score2)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
+
+        if not cast.get_actors("messages"):
+            snake.grow_tail(1)
+            snake2.grow_tail(1)
+            score.add_points(1)
+            score2.add_points(1)
