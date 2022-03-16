@@ -56,6 +56,8 @@ class Snake(Actor):
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
         if self._current_direction != velocity:
+            self.grow_tail(1)
+            self._points += 1
             self._current_direction = velocity
 
     def _prepare_body(self):
